@@ -47,6 +47,41 @@ It depends on the project stack, but my current preference is Playwright with Ty
 
 I typically structure tests using the Page Object Model to keep the selectors and interaction logic separate from the test goal, which improves the readability and keeps the maintenance at minimal with the UI changes.
 
+### Scenario Thinking
+
+#### Address Change During Checkout
+
+What must be recalculated:
+1. Tax rate
+2. Shipping cost 
+3. Currency 
+4. Customs/import fees - if applicable
+5. Region based discounts, codes, total cost 
+6. Product exist and available in that country 
+7. Payment method is available
+8. Available shipping methods and shipping timeframe
+9. Pick up points are updated 
+
+What must be validated 
+
+- Price integrity 
+- No stale cache values 
+- No client manipulation possible 
+- Promotions are re-evaluated
+- Address saved correctly
+- Order cannot be placed with outdated totals
+
+Failure & edge cases I would test
+
+User behavior
+
+- Change country multiple times quickly
+- Change after selecting payment method
+- Change after applying coupon
+- Change after selecting shipping method 
+- Back/Forward browser nav 
+- Race conditions 
+
 ### Quality Process & AI
 
 I use github copilot, mainly for it's excellent autocompletion skills especially with test writing and defining locators. Last couple of months I have been experimenting with Playwrights new test planner, generator and healer agents. It is not perfect, but still very impressive. 
