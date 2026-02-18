@@ -47,11 +47,12 @@ It depends on the project stack, but my current preference is Playwright with Ty
 
 I typically structure tests using the Page Object Model to keep the selectors and interaction logic separate from the test goal, which improves the readability and keeps the maintenance at minimal with the UI changes.
 
-### Scenario Thinking
+### Scenario Thinking - Address Change During Checkout
 
-#### Address Change During Checkout
 
-What must be recalculated:
+
+#### What must be recalculated:
+
 1. Tax rate
 2. Shipping cost 
 3. Currency 
@@ -62,7 +63,7 @@ What must be recalculated:
 8. Available shipping methods and shipping timeframe
 9. Pick up points are updated 
 
-What must be validated 
+#### What must be validated 
 
 - Price integrity 
 - No stale cache values 
@@ -71,9 +72,7 @@ What must be validated
 - Address saved correctly
 - Order cannot be placed with outdated totals
 
-Failure & edge cases I would test
-
-User behavior
+#### Failure & edge cases I would test
 
 - Change country multiple times quickly
 - Change after selecting payment method
