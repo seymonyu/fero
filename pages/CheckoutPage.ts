@@ -47,6 +47,22 @@ export class CheckoutPage extends BasePage {
     return this.page.getByTestId('country-switcher');
   }
 
+  get orderSummary() {
+    return this.page.getByTestId('order-summary-heading').locator('..');
+  }
+
+  get shippingMethod() {
+    return this.orderSummary.getByTestId('shipping');
+  }
+
+  get price() {
+    return this.orderSummary.getByTestId('price');
+  }
+
+  get shippingPrice() {
+    return this.orderSummary.getByTestId('price').nth(2);
+  } 
+
   paymentMethod(name: string) {
     return this.page.getByRole('radio', { name });
   }
