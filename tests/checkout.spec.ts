@@ -17,7 +17,7 @@ test.describe('Checkout Flow', () => {
         await productPage.acceptCookiesButton.click();
     });
     
-    test('checkout flow', async ({ page }) => {
+    test('address change during checkout', async ({ page }) => {
     await page.goto(testConfig.urls.baseUrl + '/es-es/p/w-ashley-beanie-natural-41');
 
     await productPage.addToCartButton.click();
